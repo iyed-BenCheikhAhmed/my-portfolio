@@ -14,7 +14,7 @@ function Navbar() {
       <div className="navbar-container">
         {/* Logo */}
         <Link to="/" className="navbar-logo">
-          <span className="logo-icon">💼</span>
+          <span className="logo-icon">🛡️</span>
           <span className="logo-text">Iyed Ben Cheikh Ahmed</span>
         </Link>
 
