@@ -42,13 +42,13 @@
 .project-image-large {
   background-color: #06002a;
   width: 100%;
-  height: 50px;
+  height: 400px;
   overflow: hidden;
 }
 
 .project-image-large img {
   width: 100%;
-  height: 50%;
+  height: 100%;
   object-fit: cover;
 }
 

@@ -18,10 +18,10 @@ function ProjectDetailPage() {
         <div className="container">
           <div className="not-found">
             <div className="not-found-icon">❌</div>
-            <h2>Projet non trouvé</h2>
-            <p>Le projet que vous recherchez n'existe pas.</p>
+            <h2>Project Not Found</h2>
+            <p>The project you are looking for does not exist.</p>
             <button onClick={() => navigate('/projects')} className="btn-back">
-              Retour aux projets
+              Back to Projects
             </button>
           </div>
         </div>
@@ -34,7 +34,7 @@ function ProjectDetailPage() {
       <div className="container">
         {/* Bouton retour */}
         <button onClick={() => navigate('/projects')} className="btn-back">
-          ← Retour aux projets
+          ← Back to Projects
         </button>
 
         {/* Carte du projet */}
@@ -60,9 +60,9 @@ function ProjectDetailPage() {
               <p className="project-description">{project.fullDescription}</p>
             </div>
 
-            {/* Technologies utilisées */}
+            {/* Technologies used */}
             <div className="project-section">
-              <h2 className="section-title">🛠️ Technologies utilisées</h2>
+              <h2 className="section-title">🛠️ Technologies Used</h2>
               <div className="technologies-list">
                 {project.technologies.map((tech, index) => (
                   <span key={index} className="tech-badge">
@@ -72,16 +72,17 @@ function ProjectDetailPage() {
               </div>
             </div>
 
-            {/* Fonctionnalités (exemple) */}
-            <div className="project-section">
-              <h2 className="section-title">✨ Fonctionnalités principales</h2>
-              <ul className="features-list">
-                <li>Interface utilisateur moderne et responsive</li>
-                <li>Performance optimisée</li>
-                <li>Code propre et maintenable</li>
-                <li>Tests unitaires et d'intégration</li>
-              </ul>
-            </div>
+            {/* Fonctionnalités (si disponibles) */}
+            {project.features && project.features.length > 0 && (
+              <div className="project-section">
+                <h2 className="section-title">✨ Key Features</h2>
+                <ul className="features-list">
+                  {project.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Liens */}
             <div className="project-links">
@@ -91,7 +92,7 @@ function ProjectDetailPage() {
                 rel="noopener noreferrer"
                 className="btn-secondary"
               >
-                💻 Code source
+                💻 Source Code
               </a>
             </div>
           </div>

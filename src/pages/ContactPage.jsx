@@ -33,19 +33,19 @@ function ContactPage() {
     const newErrors = {};
 
     if (!formData.nom.trim()) {
-      newErrors.nom = 'Le nom est requis';
+      newErrors.nom = 'Name is required';
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'L\'email est requis';
+      newErrors.email = 'Email is required';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = 'L\'email n\'est pas valide';
+      newErrors.email = 'Email is not valid';
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Le message est requis';
+      newErrors.message = 'Message is required';
     } else if (formData.message.trim().length < 2) {
-      newErrors.message = 'Le message doit contenir au moins 2 caractères';
+      newErrors.message = 'Message must contain at least 2 characters';
     }
 
     return newErrors;
@@ -64,8 +64,18 @@ function ContactPage() {
 
     setLoading(true);
 
+    // Construction du mailto link
+    const subject = encodeURIComponent(`Message de ${formData.nom}`);
+    const body = encodeURIComponent(
+      `Nom: ${formData.nom}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:iyedbencheikhahmed@gmail.com?subject=${subject}&body=${body}`;
+
+    // Ouvrir le client email
+    window.location.href = mailtoLink;
+
+    // Afficher le message de succès
     setTimeout(() => {
-      console.log('Message envoyé:', formData);
       setSubmitted(true);
       setLoading(false);
 
@@ -74,41 +84,41 @@ function ContactPage() {
         setFormData({ nom: '', email: '', message: '' });
         setSubmitted(false);
       }, 3000);
-    }, 1500);
+    }, 500);
   };
 
   return (
     <div className="contact-page">
       <div className="container">
         <div className="contact-header">
-          <h1 className="page-title">Contactez-moi</h1>
+          <h1 className="page-title">Contact Me</h1>
           <p className="page-subtitle">
-            Une question ? Un projet ? N'hésitez pas à me contacter !
+            Have a question? A project? Feel free to contact me!
           </p>
         </div>
 
         <div className="contact-content">
           {/* Formulaire */}
           <div className="contact-form-section">
-            <h2 className="section-title">📧 Envoyez-moi un message</h2>
+            <h2 className="section-title">📧 Send Me a Message</h2>
 
             {submitted ? (
               <div className="success-message">
                 <div className="success-icon">✅</div>
-                <h3>Message envoyé avec succès !</h3>
-                <p>Je vous répondrai dans les plus brefs délais.</p>
+                <h3>Message sent successfully!</h3>
+                <p>I will reply to you as soon as possible.</p>
               </div>
             ) : (
               <div className="contact-form">
                 <div className="form-group">
-                  <label htmlFor="nom">Nom complet *</label>
+                  <label htmlFor="nom">Full Name *</label>
                   <input
                     id="nom"
                     type="text"
                     name="nom"
                     value={formData.nom}
                     onChange={handleChange}
-                    placeholder="Votre nom"
+                    placeholder="Your name"
                     disabled={loading}
                     className={errors.nom ? 'error' : ''}
                   />
@@ -123,7 +133,7 @@ function ContactPage() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="votre.email@exemple.com"
+                    placeholder="your.email@example.com"
                     disabled={loading}
                     className={errors.email ? 'error' : ''}
                   />
@@ -137,7 +147,7 @@ function ContactPage() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Votre message..."
+                    placeholder="Your message..."
                     rows="6"
                     disabled={loading}
                     className={errors.message ? 'error' : ''}
@@ -150,7 +160,7 @@ function ContactPage() {
                   className="btn-submit"
                   disabled={loading}
                 >
-                  {loading ? 'Envoi en cours...' : 'Envoyer le message'}
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             )}
@@ -158,36 +168,36 @@ function ContactPage() {
 
           {/* Informations de contact */}
           <div className="contact-info-section">
-            <h2 className="section-title">📞 Informations de contact</h2>
+            <h2 className="section-title">📞 Contact Information</h2>
 
             <div className="contact-cards">
               <div className="contact-card">
                 <div className="card-icon">📧</div>
                 <h3>Email</h3>
-                <p>iyed@gmail.com</p>
-                <a href="mailto:iyed.bencheikhahmed@isgb.ucar.tn">M'envoyer un email</a>
+                <p>iyedbencheikhahmed@gmail.com</p>
+                <a href="mailto:iyed.bencheikhahmed@isgb.ucar.tn">Send me an email</a>
               </div>
 
               <div className="contact-card">
                 <div className="card-icon">📱</div>
-                <h3>Téléphone</h3>
+                <h3>Phone</h3>
                 <p>+216 93 555 555</p>
-                <a href="tel:+21655555555">M'appeler</a>
+                <a href="tel:+21655555555">Call me</a>
               </div>
 
               <div className="contact-card">
                 <div className="card-icon">📍</div>
-                <h3>Localisation</h3>
-                <p>Bizerte, Tunisie</p>
+                <h3>Location</h3>
+                <p>Bizerte, Tunisia</p>
                 <a href="https://www.google.com/maps/place/ISGB+:+Institut+Sup%C3%A9rieur+De+Gestion+De+Bizerte/@37.055083,9.9262005,9.23z/data=!4m10!1m2!2m1!1sisgb!3m6!1s0x12fd35ab56f77281:0xa341ba2aac3e7135!8m2!3d36.8208614!4d10.1799122!15sCgRpc2dikgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fg%2F11fn6m8jgh?authuser=0&entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                  Voir sur la carte
+                  View on map
                 </a>
               </div>
             </div>
 
-            {/* Réseaux sociaux */}
+            {/* Social networks */}
             <div className="social-section">
-              <h3>Retrouvez-moi sur :</h3>
+              <h3>Find me on:</h3>
               <div className="social-links">
                 <a href="https://www.linkedin.com/in/iyed-ben-cheikh-ahmed/" target="_blank" rel="noopener noreferrer" className="social-btn linkedin">
                   LinkedIn

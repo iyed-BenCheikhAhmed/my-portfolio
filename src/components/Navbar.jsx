@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../pages/Navbar.css';
 
-function Navbar({ isLoggedIn, onLogout }) {
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,9 +13,9 @@ function Navbar({ isLoggedIn, onLogout }) {
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
-        <Link to="/home" className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <span className="logo-icon">💼</span>
-          <span className="logo-text">Mon Portfolio</span>
+          <span className="logo-text">My Portfolio</span>
         </Link>
 
         {/* Burger Menu (Mobile) */}
@@ -26,15 +26,14 @@ function Navbar({ isLoggedIn, onLogout }) {
         </button>
 
         {/* Menu de navigation */}
-        {isLoggedIn && (
-          <ul className={menuOpen ? 'nav-menu active' : 'nav-menu'}>
+        <ul className={menuOpen ? 'nav-menu active' : 'nav-menu'}>
             <li className="nav-item">
               <Link 
-                to="/home" 
+                to="/" 
                 className="nav-link"
                 onClick={() => setMenuOpen(false)}
               >
-                🏠 Accueil
+                🏠 Home
               </Link>
             </li>
             <li className="nav-item">
@@ -43,7 +42,7 @@ function Navbar({ isLoggedIn, onLogout }) {
                 className="nav-link"
                 onClick={() => setMenuOpen(false)}
               >
-                💼 Projets
+                💼 Projects
               </Link>
             </li>
             <li className="nav-item">
@@ -55,19 +54,7 @@ function Navbar({ isLoggedIn, onLogout }) {
                 📧 Contact
               </Link>
             </li>
-            <li className="nav-item">
-              <button 
-                onClick={() => {
-                  onLogout();
-                  setMenuOpen(false);
-                }} 
-                className="btn-logout"
-              >
-                🚪 Déconnexion
-              </button>
-            </li>
           </ul>
-        )}
       </div>
     </nav>
   );

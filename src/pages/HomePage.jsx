@@ -14,18 +14,17 @@ function HomePage() {
             <div className="image-placeholder">👨‍💻</div>
           </div>
           <h1 className="hero-title">
-            Bienvenue sur mon Portfolio
+            Welcome to My Portfolio
           </h1>
           <p className="hero-subtitle">
-            Développeur Frontend passionné par la création d'applications 
-            web modernes et innovantes
+            Student passionate about Data Science and Machine Learning
           </p>
           <div className="hero-buttons">
             <Link to="/projects" className="btn-primary">
-              Voir mes projets
+              View My Projects
             </Link>
             <Link to="/contact" className="btn-secondary">
-              Me contacter
+              Contact Me
             </Link>
           </div>
         </div>
@@ -34,21 +33,66 @@ function HomePage() {
       {/* Section À propos */}
       <section className="about-section">
         <div className="container">
-          <h2 className="section-title">À propos de moi</h2>
+          <h2 className="section-title">About Me</h2>
           <div className="about-content">
-            <p>
-              Je suis un développeur Frontend. J'aime créer des applications intuitives 
-              et performantes qui résolvent des problèmes réels.
-            </p>
-            <p>
-              Spécialisé en React et Node.js, je travaille sur des projets variés 
-              allant des sites vitrines aux applications complexes avec gestion de 
-              données en temps réel.
-            </p>
-            <p>
-              Mon objectif est de créer des expériences utilisateur exceptionnelles 
-              tout en écrivant un code propre, maintenable et évolutif.
-            </p>
+            <div className="about-intro">
+              <p className="intro-text">
+                I am a student passionate about Data Science and Machine Learning. 
+                I love exploring data, discovering hidden insights, and building 
+                intelligent models that solve real-world problems.
+              </p>
+              <p className="intro-text">
+                Specialized in data analysis and machine learning, I work 
+                on various projects ranging from exploratory data analysis to 
+                creating advanced predictive models.
+              </p>
+            </div>
+
+            {/* Statistiques */}
+            <div className="stats-grid">
+              <div className="stat-card">
+                <div className="stat-icon">📊</div>
+                <h3 className="stat-number">9+</h3>
+                <p className="stat-label">Completed Projects</p>
+              </div>
+              <div className="stat-card">
+                <div className="stat-icon">🛠️</div>
+                <h3 className="stat-number">10+</h3>
+                <p className="stat-label">Technologies Mastered</p>
+              </div>
+              <div className="stat-card">
+                <div className="stat-icon">🎯</div>
+                <h3 className="stat-number">100%</h3>
+                <p className="stat-label">Commitment</p>
+              </div>
+            </div>
+
+            {/* Compétences clés */}
+            <div className="skills-section">
+              <h3 className="skills-subtitle">Areas of Expertise</h3>
+              <div className="skills-grid">
+                <div className="skill-item">
+                  <div className="skill-icon-box">🤖</div>
+                  <h4>Machine Learning</h4>
+                  <p>Building predictive models with Scikit-learn, classification and regression</p>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon-box">📈</div>
+                  <h4>Data Analysis</h4>
+                  <p>Exploratory analysis, visualization and insights with Python and Pandas</p>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon-box">💼</div>
+                  <h4>Business Intelligence</h4>
+                  <p>Interactive dashboards with Power BI and ETL pipelines</p>
+                </div>
+                <div className="skill-item">
+                  <div className="skill-icon-box">🌐</div>
+                  <h4>Web Development</h4>
+                  <p>Web applications with React, JavaScript and responsive design</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -6,11 +6,11 @@ function ProjectCard({ project }) {
   return (
     <div className="project-card">
       <div className="project-image">
-        <img  alt={project.title} />
+        <img src={project.image} alt={project.title} />
         <div className="project-overlay">
           
           <Link to={`/project/${project.id}`} className="btn-view">
-            Voir les détails
+            View Details
           </Link>
         </div>
       </div>

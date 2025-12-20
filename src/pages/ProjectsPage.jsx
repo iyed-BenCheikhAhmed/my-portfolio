@@ -16,9 +16,9 @@ function ProjectsPage() {
       <div className="projects-container">
         {/* En-tête */}
         <div className="projects-header">
-          <h1 className="page-title">Mes Projets</h1>
+          <h1 className="page-title">My projects</h1>
           <p className="page-subtitle">
-            Découvrez mes réalisations et projets personnels
+            Discover my personal achievements and projects
           </p>
         </div>
 
@@ -26,7 +26,7 @@ function ProjectsPage() {
         <div className="search-bar">
           <input
             type="text"
-            placeholder="🔍 Rechercher un projet..."
+            placeholder="🔍 Search for a project..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
