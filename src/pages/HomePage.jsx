@@ -14,7 +14,7 @@ function HomePage() {
             <div className="image-placeholder">👨‍💻</div>
           </div>
           <h1 className="hero-title">
-            Welcome to My Portfolio
+            Welcome to My Web Site
           </h1>
           <p className="hero-subtitle">
             Student passionate about Data Science and Machine Learning

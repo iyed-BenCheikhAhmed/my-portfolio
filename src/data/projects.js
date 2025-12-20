@@ -13,7 +13,7 @@ export const projects = [
       "Power BI dashboards for analytics",
       "SQL Server database optimization"
     ],
-    image: "/images/datawarehouse.jpg",
+    image: `${process.env.PUBLIC_URL}/images/datawarehouse.jpg`,
     link: "https://github.com/iyed-BenCheikhAhmed/SSIS-ETL-Pipeline-for-Ecommerce-Analytics"
   },
   {
@@ -29,7 +29,7 @@ export const projects = [
       "LocalStorage data persistence",
       "Responsive user interface"
     ],
-    image: "/images/Product-Management-system.jpg",
+    image: `${process.env.PUBLIC_URL}/images/Product-Management-system.jpg`,
     link: "https://github.com/iyed-BenCheikhAhmed/Product-Management-System"
   },
   {
@@ -45,7 +45,7 @@ export const projects = [
       "Database storage with Prisma",
       "Data cleaning and validation"
     ],
-    image: "/images/house price web scraping.jpeg",
+    image: `${process.env.PUBLIC_URL}/images/house price web scraping.jpeg`,
     link: "https://github.com/iyed-BenCheikhAhmed/Rightmove-Property-Data-Scraper-using-Python"
   },
   {
@@ -61,7 +61,7 @@ export const projects = [
       "Data visualization with Matplotlib",
       "Statistical insights and reporting"
     ],
-    image: "/images/data analysis.png",
+    image: `${process.env.PUBLIC_URL}/images/data analysis.png`,
     link: "https://github.com/iyed-BenCheikhAhmed/Adidas-Data-Analysis"
   },
   {
@@ -77,7 +77,7 @@ export const projects = [
       "Classification algorithms implementation",
       "Cross-validation for model evaluation"
     ],
-    image: "/images/nyc taxi.jpg",
+    image: `${process.env.PUBLIC_URL}/images/nyc taxi.jpg`,
     link: "https://github.com/iyed-BenCheikhAhmed/nyc-taxi-fare-prediction-ml.git"
   },
   {
@@ -93,7 +93,7 @@ export const projects = [
       "Data cleaning and transformation",
       "Geographic visualization mapping"
     ],
-    image: "/images/paris remarkable trees.jpg",
+    image: `${process.env.PUBLIC_URL}/images/paris remarkable trees.jpg`,
     link: "https://github.com/iyed-BenCheikhAhmed/projet-BI-arbres-remarquable-de-paris.git"
   },
   {
@@ -109,7 +109,7 @@ export const projects = [
       "Weather API integration",
       "Responsive design"
     ],
-    image: "/images/weather.png",
+    image: `${process.env.PUBLIC_URL}/images/weather.png`,
     link: "https://github.com/iyed-BenCheikhAhmed/react-weather-app"
   },
   {
@@ -125,7 +125,7 @@ export const projects = [
       "Order management",
       "Admin dashboard"
     ],
-    image: "/images/e-commerce.jpg",
+    image: `${process.env.PUBLIC_URL}/images/e-commerce.jpg`,
     link: "https://github.com/iyed-BenCheikhAhmed/Clothing-Brand-E-Commerce-Website"
   },
   {
@@ -141,7 +141,7 @@ export const projects = [
       "Performance metrics analysis",
       "Strategic decision support tools"
     ],
-    image: "/images/powerbi.png",
+    image: `${process.env.PUBLIC_URL}/images/powerbi.png`,
     link: "https://github.com/iyed-BenCheikhAhmed/powerBIproject-with-GIMSI.git"
   }
 ];

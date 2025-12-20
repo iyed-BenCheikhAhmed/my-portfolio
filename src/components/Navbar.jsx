@@ -15,7 +15,7 @@ function Navbar() {
         {/* Logo */}
         <Link to="/" className="navbar-logo">
           <span className="logo-icon">💼</span>
-          <span className="logo-text">My Portfolio</span>
+          <span className="logo-text">Iyed Ben Cheikh Ahmed</span>
         </Link>
 
         {/* Burger Menu (Mobile) */}
